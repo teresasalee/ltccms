@@ -1,10 +1,89 @@
-
-<!-- 將最新的HTML內容嵌入這裡，這裡先用簡化版示意 -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head><meta charset="UTF-8"><title>CMS 評估模擬表</title></head>
+<head>
+  <meta charset="UTF-8" />
+  <title>長照2.0 CMS 模擬評估表單</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: #2c3e50; }
+    .question { margin-bottom: 15px; }
+    .result { border-top: 1px solid #ccc; margin-top: 30px; padding-top: 20px; }
+  </style>
+</head>
 <body>
-<h1>模擬 CMS 評估表</h1>
-<p>請開啟完整 index.html 以操作線上評估。</p>
-</body>
-</html>
+
+  <h1>長照2.0 CMS 模擬評估表單</h1>
+
+  <!-- E 題：ADL -->
+  <h2>E 題：日常生活活動（ADL）</h2>
+  <div class="question">
+    <label><strong>E1. 進食能力：</strong></label><br>
+    <label><input type="radio" name="adl1" value="0"> 完全獨立</label><br>
+    <label><input type="radio" name="adl1" value="1"> 需要一些協助</label><br>
+    <label><input type="radio" name="adl1" value="2"> 完全依賴</label>
+  </div>
+  <!-- 重複上述區塊，依序為 E2 至 E10 -->
+
+  <!-- F 題：IADL -->
+  <h2>F 題：工具性日常生活活動（IADL）</h2>
+  <div class="question">
+    <label><strong>F1. 使用電話能力：</strong></label><br>
+    <label><input type="radio" name="iadl1" value="0"> 完全獨立</label><br>
+    <label><input type="radio" name="iadl1" value="1"> 需要一些協助</label><br>
+    <label><input type="radio" name="iadl1" value="2"> 完全依賴</label>
+  </div>
+  <!-- 重複上述區塊，依序為 F2 至 F8 -->
+
+  <!-- D 題：記憶測驗 -->
+  <h2>D 題：記憶測驗</h2>
+  <div class="question">
+    <label><strong>D1. 請個案複誦三個詞語（襪子、藍色、床）：</strong></label><br>
+    <label><input type="radio" name="memory" value="3"> 記住3個</label><br>
+    <label><input type="radio" name="memory" value="2"> 記住2個</label><br>
+    <label><input type="radio" name="memory" value="1"> 記住1個</label><br>
+    <label><input type="radio" name="memory" value="0"> 皆無法記住</label>
+  </div>
+
+  <!-- G 題：疾病史與健康狀況 -->
+  <h2>G 題：疾病史與健康狀況</h2>
+  <div class="question">
+    <label><strong>G1. 疾病史（可複選）：</strong></label><br>
+    <label><input type="checkbox" name="disease" value="高血壓"> 高血壓</label><br>
+    <label><input type="checkbox" name="disease" value="糖尿病"> 糖尿病</label><br>
+    <label><input type="checkbox" name="disease" value="心臟病"> 心臟病</label><br>
+    <label><input type="checkbox" name="disease" value="其他"> 其他</label>
+  </div>
+  <div class="question">
+    <label><strong>G2. 疼痛頻率：</strong></label><br>
+    <label><input type="radio" name="pain" value="無"> 無</label><br>
+    <label><input type="radio" name="pain" value="偶爾"> 偶爾</label><br>
+    <label><input type="radio" name="pain" value="經常"> 經常</label>
+  </div>
+  <div class="question">
+    <label><strong>G3. 視力功能：</strong></label><br>
+    <label><input type="radio" name="vision" value="正常"> 正常</label><br>
+    <label><input type="radio" name="vision" value="輕度障礙"> 輕度障礙</label><br>
+    <label><input type="radio" name="vision" value="中度障礙"> 中度障礙</label><br>
+    <label><input type="radio" name="vision" value="重度障礙"> 重度障礙</label>
+  </div>
+  <div class="question">
+    <label><strong>G4. 聽力功能：</strong></label><br>
+    <label><input type="radio" name="hearing" value="正常"> 正常</label><br>
+    <label><input type="radio" name="hearing" value="輕度障礙"> 輕度障礙</label><br>
+    <label><input type="radio" name="hearing" value="中度障礙"> 中度障礙</label><br>
+    <label><input type="radio" name="hearing" value="重度障礙"> 重度障礙</label>
+  </div>
+
+  <!-- H～K 題：社會參與與照顧壓力 -->
+  <h2>H～K 題：社會參與與照顧壓力</h2>
+  <div class="question">
+    <label><strong>H1. 個案參與社區活動頻率：</strong></label><br>
+    <label><input type="radio" name="social_participation" value="經常"> 經常</label><br>
+    <label><input type="radio" name="social_participation" value="偶爾"> 偶爾</label><br>
+    <label><input type="radio" name="social_participation" value="從不"> 從不</label>
+  </div>
+  <div class="question">
+    <label><strong>I1. 主要照顧者是否感到壓力：</strong></label><br>
+    <label><input type="radio" name="caregiver_stress" value
+::contentReference[oaicite:0]{index=0}
+ 
