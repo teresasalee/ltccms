@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>長照2.0 CMS 模擬評估表單</title>
+</head>
+<body>
+<!-- 以下為自 Canvas 擷取的完整程式碼 -->
+<!-- D 題：記憶測驗 -->
+<h2>記憶測驗（D題）</h2>
+<div class="question">
+  <label><strong>D1. 請個案複誦三個詞語（襪子、藍色、床）：</strong></label>
+  <label><input type="radio" name="memory" value="3"> 記住3個</label>
+  <label><input type="radio" name="memory" value="2"> 記住2個</label>
+  <label><input type="radio" name="memory" value="1"> 記住1個</label>
+  <label><input type="radio" name="memory" value="0"> 皆無法記住</label>
+</div>
+<!-- H～K 題（簡略） -->
+<!-- ...完整 Canvas HTML 在實際程式中... -->
+<!-- 模擬輸出結果與 JS 程式碼 -->
+<script>
+  function submitForm() {
+    let adlScore = 0;
+    let unanswered = 0;
+    for (let i = 1; i <= 10; i++) {
+      const val = document.querySelector(`input[name='adl${i}']:checked`);
+      if (val) adlScore += parseInt(val.value);
+      else unanswered++;
+    }
+    if (unanswered > 0) {
+      alert(`請填完 ADL 所有題目，尚有 ${unanswered} 題未填`);
+      return;
+    }
+    const level = adlScore <= 13 ? "CMS 第8級以上" : adlScore <= 20 ? "CMS 第6~7級" : "不符合補助";
+    document.getElementById("adl_result").innerHTML = `🔢 <strong>ADL 總分：${adlScore}</strong>，初步研判為 <strong>${level}</strong>`;
+    const stress = document.querySelector("input[name='care_stress']:checked")?.value || "未填";
+    let risk = "";
+    if (adlScore >= 24 && stress === "很大壓力") {
+      risk = "⚠️ <strong>高照顧壓力個案</strong>，建議安排社工介入或喘息服務。";
+    } else if (adlScore <= 20 && stress === "有些壓力") {
+      risk = "🟡 <strong>中度照顧壓力</strong>，可評估居家服務配套。";
+    } else {
+      risk = "✅ <strong>目前照顧負擔可控</strong>，建議持續追蹤。";
+    }
+    document.getElementById("risk_notice").innerHTML = risk;
+    document.getElementById("recommendation").innerHTML =
+      "💡 建議：依據評估結果，個案可能可申請居家服務、喘息服務、輔具補助或日照中心等，請與照顧管理專員進一步討論。";
+    document.getElementById("result").style.display = "block";
+  }
+</script>
+</body>
+</html>
